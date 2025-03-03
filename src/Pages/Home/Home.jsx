@@ -41,6 +41,11 @@ const Home = () => {
 
   return (
     <div className="container">
+      <div className="row mt-5">
+        <div className="col">
+          <h1>Perspectrum</h1>
+        </div>
+      </div>
       <div className="row">
         <div className="col">{pickCorrectPage(pageNumber)}</div>
       </div>
