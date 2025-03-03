@@ -51,7 +51,7 @@ const Question2 = ({ incrementScore, incrementPageNumber }) => {
           </div>
         </div>
         <div className="column" id="images">
-          <Timer initialTime={60} onTimeout={incrementPageNumber}></Timer>
+          <Timer initialTime={1000} onTimeout={incrementPageNumber}></Timer>
         </div>
         <div
           className="row mt-5"
