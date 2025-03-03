@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import DefaultComponent from "../../Components/Default/Default";
 import "bootstrap/dist/css/bootstrap.min.css";
+
+import Question1 from "../../Components/Questions/Question1/Question1";
 import Question2 from "../../Components/Questions/Question2/Question2";
+import Question7 from "../../Components/Questions/Question7/Question7";
 
 const Home = () => {
   const [pageNumber, setPageNumber] = useState(1);
@@ -35,7 +38,21 @@ const Home = () => {
     switch (pageId) {
       case 1:
         return (
+          <Question1
+            incrementScore={incrementScore}
+            incrementPageNumber={incrementPageNumber}
+          />
+        );
+      case 2:
+        return (
           <Question2
+            incrementScore={incrementScore}
+            incrementPageNumber={incrementPageNumber}
+          />
+        );
+      case 7:
+        return (
+          <Question7
             incrementScore={incrementScore}
             incrementPageNumber={incrementPageNumber}
           />
@@ -50,12 +67,11 @@ const Home = () => {
       <div className="row mt-5">
         <div className="col">
           <h1>Perspectrum</h1>
-          
           <h2>Score: {score}</h2> {/* Display score */}
         </div>
       </div>
       <div className="row">
-        <div className="col">{pickCorrectPage(pageNumber)}</div>
+        <div className="col">{pickCorrectPage(7)}</div>
       </div>
     </div>
   );
