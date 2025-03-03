@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Timer = ({ initialTime, onTimeUp }) => {
+const Timer = ({ initialTime, onTimeout }) => {
   const [time, setTime] = useState(initialTime);
 
   useEffect(() => {
@@ -11,9 +11,9 @@ const Timer = ({ initialTime, onTimeUp }) => {
 
       return () => clearInterval(timerId);
     } else {
-      onTimeUp();
+        onTimeout()
     }
-  }, [time, onTimeUp]);
+  }, [time, onTimeout]);
 
   return (
     <div className="d-flex justify-content-center">
