@@ -2,6 +2,13 @@ import React, { useState, useEffect } from "react";
 import DefaultComponent from "../../Components/Default/Default";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Question2 from "../../Components/Questions/Question2/Question2";
+import Question3 from "../../Components/Questions/Question3/Question3";
+import Question4 from "../../Components/Questions/Question4/Question4";
+import Question5 from "../../Components/Questions/Question5/Question5";
+import Question6 from "../../Components/Questions/Question6/Question6";
+
+
+
 
 const Home = () => {
   const [pageNumber, setPageNumber] = useState(1);
@@ -40,6 +47,34 @@ const Home = () => {
             incrementPageNumber={incrementPageNumber}
           />
         );
+        case 2:
+        return (
+          <Question3
+            incrementScore={incrementScore}
+            incrementPageNumber={incrementPageNumber}
+          />
+        );
+        case 3:
+          return (
+            <Question4
+              incrementScore={incrementScore}
+              incrementPageNumber={incrementPageNumber}
+            />
+          );
+          case 4:
+            return (
+              <Question5
+                incrementScore={incrementScore}
+                incrementPageNumber={incrementPageNumber}
+              />
+            );
+            case 5:
+              return (
+                <Question6
+                  incrementScore={incrementScore}
+                  incrementPageNumber={incrementPageNumber}
+                />
+              );
       default:
         return <DefaultComponent />;
     }
