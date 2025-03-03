@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import DefaultComponent from "../../Components/Default/Default";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Question2 from "../../Components/Questions/Question2.jsx/Question2";
+import Question2 from "../../Components/Questions/Question2/Question2";
 
 const Home = () => {
   const [pageNumber, setPageNumber] = useState(1);
@@ -27,6 +27,7 @@ const Home = () => {
   };
 
   const incrementScore = () => {
+    setPageNumber((prevPage) => prevPage + 1);
     setScore((prevScore) => prevScore + 1);
   };
 
@@ -36,7 +37,7 @@ const Home = () => {
         return (
           <Question2
             incrementScore={incrementScore}
-            onTimeout={incrementPageNumber}
+            incrementPageNumber={incrementPageNumber}
           />
         );
       default:
@@ -49,7 +50,8 @@ const Home = () => {
       <div className="row mt-5">
         <div className="col">
           <h1>Perspectrum</h1>
-          <p>Score: {score}</p> {/* Display score */}
+          
+          <h2>Score: {score}</h2> {/* Display score */}
         </div>
       </div>
       <div className="row">
