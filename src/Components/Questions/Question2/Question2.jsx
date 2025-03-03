@@ -6,9 +6,9 @@ import Timer from '../../Timer/Timer'
 const Question2 = ({ incrementScore, incrementPageNumber }) => {
     const renderOptions = () => {
         const options = []
-        const yesIndex = Math.floor(Math.random() * 4)
+        const yesIndex = Math.floor(Math.random() * 100)
 
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < 100; i++) {
             if (i === yesIndex) {
                 options.push(
                     <div
@@ -29,7 +29,7 @@ const Question2 = ({ incrementScore, incrementPageNumber }) => {
                         className="col-6 mb-2"
                         key={`no-${i}`}
                     >
-                        <Button className="w-100">No</Button>
+                        <Button className="w-100" onClick={incrementPageNumber}>No</Button>
                     </div>
                 )
             }
@@ -63,7 +63,7 @@ const Question2 = ({ incrementScore, incrementPageNumber }) => {
                     id="images"
                 >
                     <Timer
-                        initialTime={9000}
+                        initialTime={3}
                         onTimeout={incrementPageNumber}
                     ></Timer>
                 </div>
