@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import DefaultComponent from "../../Components/Default/Default";
-import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Question1 from "../../Components/Questions/Question1/Question1";
+import Question2 from "../../Components/Questions/Question2.jsx/Question2";
 
 const Home = () => {
   const [pageNumber, setPageNumber] = useState(1);
+  const [score, setScore] = useState(0)
 
   const bgColors = [
     "var(--bg-color-1)",
@@ -26,10 +26,14 @@ const Home = () => {
     setPageNumber(pageNumber + 1);
   };
 
+  const incrementScore = () => {
+    setScore(score+1)
+  }
+
   const pickCorrectPage = (pageId) => {
     switch (pageId) {
       case 1:
-        return <Question1 />;
+        return <Question2 incrementScore={incrementScore}/>;
       default:
         return <DefaultComponent />;
     }
