@@ -5,35 +5,40 @@ import Question2 from "../../Components/Questions/Question2.jsx/Question2";
 
 const Home = () => {
   const [pageNumber, setPageNumber] = useState(1);
-  const [score, setScore] = useState(0)
+  const [score, setScore] = useState(0);
 
   const bgColors = [
     "var(--bg-color-1)",
     "var(--bg-color-2)",
     "var(--bg-color-3)",
   ];
+
   const randomBackgroundColor = () => {
     const randomIndex = Math.floor(Math.random() * bgColors.length);
     return bgColors[randomIndex];
   };
 
   useEffect(() => {
-    const selectedColor = randomBackgroundColor();
-    document.body.style.backgroundColor = selectedColor;
+    document.body.style.backgroundColor = randomBackgroundColor();
   }, [pageNumber]);
 
   const incrementPageNumber = () => {
-    setPageNumber(pageNumber + 1);
+    setPageNumber((prevPage) => prevPage + 1);
   };
 
   const incrementScore = () => {
-    setScore(score+1)
-  }
+    setScore((prevScore) => prevScore + 1);
+  };
 
   const pickCorrectPage = (pageId) => {
     switch (pageId) {
       case 1:
-        return <Question2 incrementScore={incrementScore}/>;
+        return (
+          <Question2
+            incrementScore={incrementScore}
+            onTimeout={incrementPageNumber}
+          />
+        );
       default:
         return <DefaultComponent />;
     }
@@ -44,6 +49,7 @@ const Home = () => {
       <div className="row mt-5">
         <div className="col">
           <h1>Perspectrum</h1>
+          <p>Score: {score}</p> {/* Display score */}
         </div>
       </div>
       <div className="row">
