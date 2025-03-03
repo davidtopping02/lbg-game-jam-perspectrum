@@ -1,42 +1,128 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+
+:root {
+
+  /* background colours */
+  --bg-color-1: #C888AA; /* Updated background color 1 */
+  --bg-color-2: #E57E8B; /* Updated background color 2 */
+  --bg-color-3: #A6DFCD; /* Updated background color 3 */
+  
+  /* button colours */
+  --btn-color-1: #889D78; /* Updated button color 1 */
+  --btn-color-2: #D7829A; /* Updated button color 2 */
+  --btn-color-3: #7A7DD6; /* Updated button color 3 */
+
+  --font-size-large: 50px; /* Increased */
+  --font-size-medium: 35px; /* Increased */
+  --font-size-small: 30px; /* Increased */
+  --font-size-x-small: 28px; /* Increased */
+  --font-size-xx-small: 25px; /* Increased */
+  --font-size-xxx-small: 20px; /* Increased */
+  --font-size-paragraph: 18px; /* Increased */
+}
+
+body {
+  font-family: 'Pixelify Sans', sans-serif !important;
+  color: black; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: black !important; /* Ensure heading text is black */
+}
+
+h1 {
   text-align: center;
+  font-size: var(--font-size-large) !important;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+h2 {
+  font-size: var(--font-size-medium) !important;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h3 {
+  font-size: var(--font-size-small) !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+h4 {
+  font-size: var(--font-size-x-small) !important;
 }
 
-.card {
-  padding: 2em;
+h5 {
+  font-size: var(--font-size-xx-small) !important;
 }
 
-.read-the-docs {
-  color: #888;
+h6 {
+  font-size: var(--font-size-xxx-small) !important;
+}
+
+p {
+  font-family: 'Pixelify Sans', sans-serif !important;
+  color: black !important; /* Ensure paragraph text is black */
+  font-size: var(--font-size-paragraph) !important;
+}
+
+a {
+  color: var(--bg-color-3) !important; /* Updated link color */
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: var(--bg-color-2) !important; /* Updated link hover color */
+}
+
+.btn {
+  background-color: var(--btn-color-1) !important; /* Updated button background color 1 */
+  color: white !important;
+  border: none !important;
+  padding: 10px 20px !important;
+  font-size: 1rem !important;
+  cursor: pointer !important;
+  border-radius: 5px !important;
+  transition: background-color 0.3s ease !important;
+}
+
+.btn:hover {
+  background-color: var(--btn-color-2) !important; /* Updated button hover color 2 */
+}
+
+/* Background classes */
+.bg-main {
+  background-color: var(--bg-color-1); /* Updated background color 1 */
+}
+
+.bg-accent {
+  background-color: var(--bg-color-2); /* Updated background color 2 */
+}
+
+.bg-link {
+  background-color: var(--bg-color-3); /* Updated background color 3 */
+}
+
+.bg-button {
+  background-color: var(--btn-color-1); /* Updated button background color 1 */
+}
+
+.bg-secondary {
+  background-color: var(--btn-color-3); /* Updated button color 3 */
+}
+
+/* For hover effects */
+.bg-main:hover {
+  background-color: var(--btn-color-1); /* Updated button color 1 */
+}
+
+.bg-accent:hover {
+  background-color: var(--btn-color-2); /* Updated button hover color 2 */
+}
+
+.bg-link:hover {
+  background-color: var(--btn-color-3); /* Updated button color 3 */
+}
+
+.bg-button:hover {
+  background-color: var(--btn-color-2); /* Updated button hover color 2 */
+}
+
+.bg-secondary:hover {
+  background-color: var(--btn-color-3); /* Updated button color 3 */
 }
