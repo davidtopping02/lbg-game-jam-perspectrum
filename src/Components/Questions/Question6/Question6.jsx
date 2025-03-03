@@ -3,16 +3,16 @@ import { Button } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Timer from '../../Timer/Timer'
 
-const Question2 = ({ incrementScore, incrementPageNumber }) => {
+const Question6 = ({ incrementScore, incrementPageNumber }) => {
     const renderOptions = () => {
         const options = []
-        const yesIndex = Math.floor(Math.random() * 10)
+        const yesIndex = Math.floor(Math.random() * 2400)
 
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 2400; i++) {
             if (i === yesIndex) {
                 options.push(
                     <div
-                        className="col-6 mb-2"
+                        className="col-1 mb-2"
                         key="yes"
                     >
                         <Button
@@ -26,7 +26,7 @@ const Question2 = ({ incrementScore, incrementPageNumber }) => {
             } else {
                 options.push(
                     <div
-                        className="col-6 mb-2"
+                        className="col-1 mb-2"
                         key={`no-${i}`}
                     >
                         <Button className="w-100" onClick={incrementPageNumber}>No</Button>
@@ -62,7 +62,7 @@ const Question2 = ({ incrementScore, incrementPageNumber }) => {
                     id="images"
                 >
                     <Timer
-                        initialTime={60}
+                        initialTime={15}
                         onTimeout={incrementPageNumber}
                     ></Timer>
                 </div>
@@ -84,4 +84,4 @@ const Question2 = ({ incrementScore, incrementPageNumber }) => {
     )
 }
 
-export default Question2
+export default Question6

@@ -3,12 +3,12 @@ import { Button } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Timer from '../../Timer/Timer'
 
-const Question2 = ({ incrementScore, incrementPageNumber }) => {
+const Question3 = ({ incrementScore, incrementPageNumber }) => {
     const renderOptions = () => {
         const options = []
-        const yesIndex = Math.floor(Math.random() * 10)
+        const yesIndex = Math.floor(Math.random() * 30)
 
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 30; i++) {
             if (i === yesIndex) {
                 options.push(
                     <div
@@ -84,4 +84,4 @@ const Question2 = ({ incrementScore, incrementPageNumber }) => {
     )
 }
 
-export default Question2
+export default Question3
