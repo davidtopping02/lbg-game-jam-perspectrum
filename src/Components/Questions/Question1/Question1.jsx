@@ -6,12 +6,13 @@ const Question1 = ({incrementScore}) => {
   return (
     <div>
       <div className="container">
-        <div className="row" id="question" style={{ height: '65vh', backgroundColor: 'white', border: '1px solid black', padding: '20px', marginBottom: '10px' }}>
+        <div className="row" id="question" style={{ height: '30vh', backgroundColor: 'white', border: '4px solid green', padding: '20px', marginBottom: '10px', marginTop: '20px' }}>
           <div className="col-12">
             What do you know about neurodiversity?
           </div>
         </div>
-        <div className="row" id="answer" style={{ height: '20vh', backgroundColor: 'white', border: '1px solid black', padding: '20px' }}>
+        <div className="column" id='images' style={{height: '20vh'}}></div>
+        <div className="row" id="answer" style={{ height: '20vh', backgroundColor: 'white', border: '4px solid green', padding: '20px' }}>
           <div className="col-6">
             <Button className="w-100 mb-2">Option A</Button>
           </div>
