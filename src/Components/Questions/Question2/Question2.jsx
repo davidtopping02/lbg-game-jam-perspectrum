@@ -6,9 +6,9 @@ import Timer from '../../Timer/Timer'
 const Question2 = ({ incrementScore, incrementPageNumber }) => {
     const renderOptions = () => {
         const options = []
-        const yesIndex = Math.floor(Math.random() * 100)
+        const yesIndex = Math.floor(Math.random() * 10)
 
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < 10; i++) {
             if (i === yesIndex) {
                 options.push(
                     <div
@@ -55,7 +55,6 @@ const Question2 = ({ incrementScore, incrementPageNumber }) => {
                 >
                     <div className="col-12">
                         <h2>Click yes</h2>
-                        <p>(Page will move on in 5 seconds...)</p>
                     </div>
                 </div>
                 <div
@@ -63,7 +62,7 @@ const Question2 = ({ incrementScore, incrementPageNumber }) => {
                     id="images"
                 >
                     <Timer
-                        initialTime={3}
+                        initialTime={60}
                         onTimeout={incrementPageNumber}
                     ></Timer>
                 </div>
