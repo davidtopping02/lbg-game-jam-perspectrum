@@ -3,12 +3,18 @@ import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Timer from "../../Timer/Timer";
 import "./Question1.css";
+
 const Question1 = ({ incrementScore, incrementPageNumber }) => {
   const [isYesDisabled, setIsYesDisabled] = useState(false);
 
+  const playSound = (sound) => {
+    const audio = new Audio(sound);
+    audio.play();
+  };
+
   useEffect(() => {
     const toggleButtonInterval = setInterval(() => {
-      const disableTime = Math.random() * 90000 + 1000;
+      const disableTime = Math.random() * 10000 + 1000;
       const enableTime = 250;
 
       setIsYesDisabled(true);
@@ -34,7 +40,10 @@ const Question1 = ({ incrementScore, incrementPageNumber }) => {
         <div className="col-6 mb-2">
           <Button
             className="w-100"
-            onClick={incrementScore}
+            onClick={() => {
+              incrementScore();
+              playSound("/correct-sfx.mp3");
+            }}
             disabled={isYesDisabled}
             style={{
               transition: "background-color 0.3s ease, opacity 0.3s ease",
@@ -44,7 +53,12 @@ const Question1 = ({ incrementScore, incrementPageNumber }) => {
           </Button>
         </div>
         <div className="col-6 mb-2">
-          <Button className="w-100">No</Button>
+          <Button
+            className="w-100"
+            onClick={() => playSound("/incorrect-sfx.mp3")}
+          >
+            No
+          </Button>
         </div>
       </div>
     </div>
