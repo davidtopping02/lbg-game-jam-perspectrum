@@ -55,7 +55,6 @@ const Question5 = ({ incrementScore, incrementPageNumber }) => {
           className="row"
           id="question"
           style={{
-            height: "20vh",
             backgroundColor: "white",
             border: "4px solid green",
             padding: "20px",
@@ -69,7 +68,7 @@ const Question5 = ({ incrementScore, incrementPageNumber }) => {
 
           <div className="col-4">
             <img
-              src="/IMG_7764.png"
+              src="/email.png"
               alt="Breakfast"
               style={{ width: "100%", height: "100%" }}
             />
