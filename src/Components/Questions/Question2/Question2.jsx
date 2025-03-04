@@ -3,27 +3,48 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Button } from "react-bootstrap";
 import Timer from "../../Timer/Timer";
 
-const Question2 = ({ incrementPageNumber }) => {
+const Question2 = ({ incrementPageNumber, incrementScore }) => {
+  const playSound = (sound) => {
+    const audio = new Audio(sound);
+    audio.play();
+  };
+
   const renderOptions = () => {
     const options = [];
-    for (let i = 0; i < 5; i++) {
-      options.push(
-        <div className="col-6 mb-2" key={i}>
-          <Button className="w-100" onClick={incrementPageNumber}>
-            Yes
-          </Button>
-        </div>
-      );
-      if (i === 4) {
+    const yesIndex = Math.floor(Math.random() * 8);
+
+    for (let i = 0; i < 8; i++) {
+      if (i === yesIndex) {
         options.push(
-          <div className="col-6 mb-2" key="no">
-            <Button className="w-100" onClick={incrementPageNumber}>
+          <div className="col-6 mb-2" key="yes">
+            <Button
+              className="w-100"
+              onClick={() => {
+                incrementScore();
+                playSound("/correct-sfx.mp3");
+              }}
+            >
+              Yes
+            </Button>
+          </div>
+        );
+      } else {
+        options.push(
+          <div className="col-6 mb-2" key={`no-${i}`}>
+            <Button
+              className="w-100"
+              onClick={() => {
+                incrementPageNumber();
+                playSound("/incorrect-sfx.mp3");
+              }}
+            >
               No
             </Button>
           </div>
         );
       }
     }
+
     return options;
   };
 
