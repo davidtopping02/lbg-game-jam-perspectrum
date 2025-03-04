@@ -30,11 +30,19 @@ const Question7 = ({ incrementScore, incrementPageNumber }) => {
   return (
     <div className="container">
       <div className="row question">
-        <div className="col-12">
+        <div className="col-8">
           <h2>
             Its your mums birthday soon, you’ve just written a card, do you post
             it now?
           </h2>
+        </div>
+
+        <div className="col-4">
+          <img
+            src="/IMG_7771.png"
+            alt="Breakfast"
+            style={{ width: "100%", height: "100%" }}
+          />
         </div>
       </div>
       <div className="column images">
