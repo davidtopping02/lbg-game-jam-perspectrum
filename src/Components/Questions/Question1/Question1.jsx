@@ -23,13 +23,22 @@ const Question1 = ({ incrementScore, incrementPageNumber }) => {
   return (
     <div className="container">
       <div className="row question">
-        <div className="col-12">
+        <div className="col-8">
           <h2>
             You’ve just been told someone's name for the 6th time, do you
             remember it?
           </h2>
         </div>
+
+        <div className="col-4">
+          <img
+            src="/IMG_7762.png"
+            alt="Breakfast"
+            style={{ width: "100%", height: "100%" }}
+          />
+        </div>
       </div>
+
       <div className="column images">
         <Timer initialTime={9000} onTimeout={incrementPageNumber}></Timer>
       </div>

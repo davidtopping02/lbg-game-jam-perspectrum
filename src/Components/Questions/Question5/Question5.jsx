@@ -63,8 +63,16 @@ const Question5 = ({ incrementScore, incrementPageNumber }) => {
             marginTop: "20px",
           }}
         >
-          <div className="col-12">
+          <div className="col-8">
             <h2>You’ve just written out an email reply, do you send it?</h2>
+          </div>
+
+          <div className="col-4">
+            <img
+              src="/IMG_7764.png"
+              alt="Breakfast"
+              style={{ width: "100%", height: "100%" }}
+            />
           </div>
         </div>
         <div className="column" id="images">

@@ -55,7 +55,6 @@ const Question3 = ({ incrementScore, incrementPageNumber }) => {
           className="row"
           id="question"
           style={{
-            height: "20vh",
             backgroundColor: "white",
             border: "4px solid green",
             padding: "20px",
@@ -63,11 +62,19 @@ const Question3 = ({ incrementScore, incrementPageNumber }) => {
             marginTop: "20px",
           }}
         >
-          <div className="col-12">
+          <div className="col-8">
             <h2>
               You have a doctors appointment at 4pm, do you do anything else
               productive before?
             </h2>
+          </div>
+
+          <div className="col-4">
+            <img
+              src="/IMG_7755.png"
+              alt="Breakfast"
+              style={{ width: "100%", height: "100%" }}
+            />
           </div>
         </div>
         <div className="column" id="images">
