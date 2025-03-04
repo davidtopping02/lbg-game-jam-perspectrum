@@ -46,7 +46,7 @@ const Question7 = ({ incrementScore, incrementPageNumber }) => {
         </div>
       </div>
       <div className="column images">
-        <Timer initialTime={9000} onTimeout={incrementPageNumber}></Timer>
+        <Timer initialTime={500} onTimeout={incrementPageNumber}></Timer>
       </div>
       <div className="row answer">
         {[...Array(6)].map((_, index) => (
