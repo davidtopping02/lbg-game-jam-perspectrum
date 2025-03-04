@@ -4,29 +4,46 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Timer from "../../Timer/Timer";
 
 const Question3 = ({ incrementScore, incrementPageNumber }) => {
-    const renderOptions = () => {
-        const options = [];
-        const yesIndex = Math.floor(Math.random() * 30);
+  const playSound = (sound) => {
+    const audio = new Audio(sound);
+    audio.play();
+  };
 
-        for (let i = 0; i < 30; i++) {
-            if (i === yesIndex) {
-                options.push(
-                    <div className="col-6 mb-2" key="yes">
-                        <Button className="w-100" onClick={incrementScore}>
-                            Yes
-                        </Button>
-                    </div>
-                );
-            } else {
-                options.push(
-                    <div className="col-6 mb-2" key={`no-${i}`}>
-                        <Button className="w-100" onClick={incrementPageNumber}>
-                            No
-                        </Button>
-                    </div>
-                );
-            }
-        }
+  const renderOptions = () => {
+    const options = [];
+    const yesIndex = Math.floor(Math.random() * 30);
+
+    for (let i = 0; i < 30; i++) {
+      if (i === yesIndex) {
+        options.push(
+          <div className="col-6 mb-2" key="yes">
+            <Button
+              className="w-100"
+              onClick={() => {
+                incrementScore();
+                playSound("/correct-sfx.mp3");
+              }}
+            >
+              Yes
+            </Button>
+          </div>
+        );
+      } else {
+        options.push(
+          <div className="col-6 mb-2" key={`no-${i}`}>
+            <Button
+              className="w-100"
+              onClick={() => {
+                incrementPageNumber();
+                playSound("/incorrect-sfx.mp3");
+              }}
+            >
+              No
+            </Button>
+          </div>
+        );
+      }
+    }
 
         return options;
     };

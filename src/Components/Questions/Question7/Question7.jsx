@@ -4,12 +4,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Timer from "../../Timer/Timer";
 import "./Question7.css";
 
-const Question1 = ({ incrementScore, incrementPageNumber }) => {
+const Question7 = ({ incrementScore, incrementPageNumber }) => {
   const [enabledButtonIndex, setEnabledButtonIndex] = useState(null);
+
+  const playSound = (sound) => {
+    const audio = new Audio(sound);
+    audio.play();
+  };
 
   useEffect(() => {
     const toggleButton = () => {
-      const randomIndex = Math.floor(Math.random() * 5);
+      const randomIndex = Math.floor(Math.random() * 6); // There are 6 buttons
       setEnabledButtonIndex(randomIndex);
       setTimeout(() => {
         setEnabledButtonIndex(null);
@@ -38,7 +43,10 @@ const Question1 = ({ incrementScore, incrementPageNumber }) => {
           <div className="col-6 mb-2" key={index}>
             <Button
               className="w-100"
-              onClick={incrementScore}
+              onClick={() => {
+                incrementScore();
+                playSound("/correct-sfx.mp3");
+              }}
               disabled={enabledButtonIndex !== index}
             >
               Yes
@@ -50,4 +58,4 @@ const Question1 = ({ incrementScore, incrementPageNumber }) => {
   );
 };
 
-export default Question1;
+export default Question7;
