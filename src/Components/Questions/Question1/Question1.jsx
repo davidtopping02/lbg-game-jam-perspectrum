@@ -13,16 +13,12 @@ const Question1 = ({ incrementScore, incrementPageNumber }) => {
   };
 
   useEffect(() => {
-    const toggleButtonInterval = setInterval(() => {
-      const disableTime = Math.random() * 10000 + 1000;
-      const enableTime = 250;
-
+      const disableTime = Math.random() * 3000+ 1000;
       setIsYesDisabled(true);
-
       setTimeout(() => {
         setIsYesDisabled(false);
       }, disableTime);
-    }, 1500);
+    
   }, []);
 
   return (
@@ -55,7 +51,10 @@ const Question1 = ({ incrementScore, incrementPageNumber }) => {
         <div className="col-6 mb-2">
           <Button
             className="w-100"
-            onClick={() => playSound("/incorrect-sfx.mp3")}
+            onClick={() => {
+              playSound("/incorrect-sfx.mp3")
+              incrementPageNumber()
+            }}
           >
             No
           </Button>

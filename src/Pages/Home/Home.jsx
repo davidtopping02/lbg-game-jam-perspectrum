@@ -10,6 +10,7 @@ import Question4 from "../../Components/Questions/Question4/Question4";
 import Question5 from "../../Components/Questions/Question5/Question5";
 import Question6 from "../../Components/Questions/Question6/Question6";
 import Question7 from "../../Components/Questions/Question7/Question7";
+import TeachingPage1 from "../../Components/TeachingPage1";
 
 const Home = () => {
   const [pageNumber, setPageNumber] = useState(0);
@@ -45,7 +46,7 @@ const Home = () => {
         return <WelcomePage incrementPageNumber={incrementPageNumber} />;
       case 1:
         return (
-          <Question2
+          <Question1
             incrementScore={incrementScore}
             incrementPageNumber={incrementPageNumber}
           />
@@ -85,20 +86,24 @@ const Home = () => {
             incrementPageNumber={incrementPageNumber}
           />
         );
-      case 7:
+        case 7:
+          return (
+            <TeachingPage1 />
+          )
+      case 8:
         return (
           <Question7
             incrementScore={incrementScore}
             incrementPageNumber={incrementPageNumber}
           />
         );
-      case 8:
-        return (
-          <Question1
-            incrementScore={incrementScore}
-            incrementPageNumber={incrementPageNumber}
-          />
-        );
+        case 9:
+          return (
+            <Question1
+              incrementScore={incrementScore}
+              incrementPageNumber={incrementPageNumber}
+            />
+          );
       default:
         return <DefaultComponent />;
     }
