@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
 const Timer = ({ initialTime, onTimeout }) => {
-  const [time, setTime] = useState(initialTime);
+  const [time, setTime] = useState(60);
 
   useEffect(() => {
     if (time > 0) {
       const timerId = setInterval(() => {
         setTime(prevTime => prevTime - 1);
-      }, 1000);
+      }, initialTime);
 
       return () => clearInterval(timerId);
     } else {

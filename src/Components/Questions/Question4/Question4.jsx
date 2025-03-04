@@ -45,47 +45,47 @@ const Question4 = ({ incrementScore, incrementPageNumber }) => {
       }
     }
 
-    return options;
-  };
+        return options;
+    };
 
-  return (
-    <div>
-      <div className="container">
-        <div
-          className="row"
-          id="question"
-          style={{
-            height: "20vh",
-            backgroundColor: "white",
-            border: "4px solid green",
-            padding: "20px",
-            marginBottom: "10px",
-            marginTop: "20px",
-          }}
-        >
-          <div className="col-12">
-            <h2>Q4 Click yes</h2>
-          </div>
+    return (
+        <div>
+            <div className="container">
+                <div
+                    className="row"
+                    id="question"
+                    style={{
+                        height: "20vh",
+                        backgroundColor: "white",
+                        border: "4px solid green",
+                        padding: "20px",
+                        marginBottom: "10px",
+                        marginTop: "20px",
+                    }}
+                >
+                    <div className="col-12">
+                        <h2>Q4 Click yes</h2>
+                    </div>
+                </div>
+                <div className="column" id="images">
+                    <Timer initialTime={500} onTimeout={incrementPageNumber}></Timer>
+                </div>
+                <div
+                    className="row mt-5"
+                    id="answer"
+                    style={{
+                        height: "40vh",
+                        backgroundColor: "white",
+                        border: "4px solid green",
+                        padding: "20px",
+                        overflowY: "scroll",
+                    }}
+                >
+                    {renderOptions()}
+                </div>
+            </div>
         </div>
-        <div className="column" id="images">
-          <Timer initialTime={20} onTimeout={incrementPageNumber}></Timer>
-        </div>
-        <div
-          className="row mt-5"
-          id="answer"
-          style={{
-            height: "40vh",
-            backgroundColor: "white",
-            border: "4px solid green",
-            padding: "20px",
-            overflowY: "scroll",
-          }}
-        >
-          {renderOptions()}
-        </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Question4;

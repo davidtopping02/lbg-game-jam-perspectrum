@@ -42,7 +42,7 @@ const Home = () => {
     switch (pageId) {
       case 1:
         return (
-          <Question1
+          <Question2
             incrementScore={incrementScore}
             incrementPageNumber={incrementPageNumber}
           />
@@ -89,6 +89,13 @@ const Home = () => {
             incrementPageNumber={incrementPageNumber}
           />
         );
+        case 8:
+          return (
+            <Question1
+              incrementScore={incrementScore}
+              incrementPageNumber={incrementPageNumber}
+            />
+          );
       default:
         return <DefaultComponent />;
     }
