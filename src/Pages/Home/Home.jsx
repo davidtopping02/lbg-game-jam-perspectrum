@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import DefaultComponent from "../../Components/Default/Default";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import WelcomePage from "../../Components/WelcomePage/WelcomePage";
 import Question1 from "../../Components/Questions/Question1/Question1";
 import Question2 from "../../Components/Questions/Question2/Question2";
 import Question3 from "../../Components/Questions/Question3/Question3";
@@ -11,7 +12,7 @@ import Question6 from "../../Components/Questions/Question6/Question6";
 import Question7 from "../../Components/Questions/Question7/Question7";
 
 const Home = () => {
-  const [pageNumber, setPageNumber] = useState(1);
+  const [pageNumber, setPageNumber] = useState(0);
   const [score, setScore] = useState(0);
 
   const bgColors = [
@@ -40,6 +41,8 @@ const Home = () => {
 
   const pickCorrectPage = (pageId) => {
     switch (pageId) {
+      case 0:
+        return <WelcomePage incrementPageNumber={incrementPageNumber} />;
       case 1:
         return (
           <Question2
@@ -89,13 +92,13 @@ const Home = () => {
             incrementPageNumber={incrementPageNumber}
           />
         );
-        case 8:
-          return (
-            <Question1
-              incrementScore={incrementScore}
-              incrementPageNumber={incrementPageNumber}
-            />
-          );
+      case 8:
+        return (
+          <Question1
+            incrementScore={incrementScore}
+            incrementPageNumber={incrementPageNumber}
+          />
+        );
       default:
         return <DefaultComponent />;
     }
@@ -105,8 +108,8 @@ const Home = () => {
     <div className="container">
       <div className="row mt-5">
         <div className="col">
-          <h1>Perspectrum</h1>
-          <h2>Score: {score}</h2> {/* Display score */}
+          {pageNumber !== 0 && <h1>Perspectrum</h1>}
+          {pageNumber !== 0 && <h2>Score: {score}</h2>}{" "}
         </div>
       </div>
       <div className="row">

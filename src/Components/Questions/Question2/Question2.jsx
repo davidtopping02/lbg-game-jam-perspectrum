@@ -11,9 +11,9 @@ const Question2 = ({ incrementScore, incrementPageNumber }) => {
 
   const renderOptions = () => {
     const options = [];
-    const yesIndex = Math.floor(Math.random() * 10);
+    const yesIndex = Math.floor(Math.random() * 8);
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 8; i++) {
       if (i === yesIndex) {
         options.push(
           <div className="col-6 mb-2" key="yes">
