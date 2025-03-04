@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
 
 :root {
 
@@ -12,9 +12,9 @@
   --btn-color-2: #D7829A; /* Updated button color 2 */
   --btn-color-3: #7A7DD6; /* Updated button color 3 */
 
-  --font-size-large: 50px; /* Increased */
-  --font-size-medium: 35px; /* Increased */
-  --font-size-small: 30px; /* Increased */
+  --font-size-large: 60px; /* Increased */
+  --font-size-medium: 45px; /* Increased */
+  --font-size-small: 35px; /* Increased */
   --font-size-x-small: 28px; /* Increased */
   --font-size-xx-small: 25px; /* Increased */
   --font-size-xxx-small: 20px; /* Increased */
@@ -22,7 +22,7 @@
 }
 
 body {
-  font-family: 'Pixelify Sans', sans-serif !important;
+  font-family: 'Jersey 10', sans-serif !important;
   color: black; 
 }
 
