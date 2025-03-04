@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
 
 :root {
   /* Background colors */
@@ -26,7 +26,7 @@ body, h1, h2, h3, h4, h5, h6, p, a, button {
   -webkit-user-select: none; /* For Safari */
   -moz-user-select: none; /* For Firefox */
   -ms-user-select: none; /* For Internet Explorer/Edge */
-  font-family: 'Pixelify Sans', sans-serif !important;
+  font-family: 'Jersey 10', sans-serif !important;
 }
 
 body {
