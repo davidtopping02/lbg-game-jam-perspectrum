@@ -33,9 +33,9 @@ const WelcomePage = ({ incrementPageNumber }) => {
     if (fadeOut) {
       setTimeout(() => {
         setFadeOut(false);
-        setTitle(" ".repeat(fullTitle.length)); // Keep space for text
+        setTitle(" ".repeat(fullTitle.length));
         setTyping(false);
-        setTimeout(() => setTyping(true), 1000); // Restart typing after fade
+        setTimeout(() => setTyping(true), 1000);
       }, 1000);
     }
   }, [fadeOut]);
@@ -55,7 +55,7 @@ const WelcomePage = ({ incrementPageNumber }) => {
       >
         {title}
       </h1>
-      <h2 className="lead">{subtitles[subtitleIndex]}</h2>
+      <h2>{subtitles[subtitleIndex]}</h2>
       <button
         className="btn btn-primary btn-lg mt-4"
         onClick={incrementPageNumber}
