@@ -106,8 +106,7 @@ const Home = () => {
     <div className="container">
       <div className="row mt-5">
         <div className="col">
-          {pageNumber !== 0 && <h1>Perspectrum</h1>}
-          {pageNumber !== 0 && <h2>Score: {score}</h2>}{" "}
+          {pageNumber !== 0 && pageNumber !== 10 && <h2>Score: {score}</h2>}{" "}
         </div>
       </div>
       <div className="row">

@@ -31,8 +31,10 @@ const Question7 = ({ incrementScore, incrementPageNumber }) => {
     <div className="container">
       <div className="row question">
         <div className="col-12">
-          <h2>Q7 Click yes</h2>
-          <p>(Page will move on in 5 seconds...)</p>
+          <h2>
+            Its your mums birthday soon, you’ve just written a card, do you post
+            it now?
+          </h2>
         </div>
       </div>
       <div className="column images">

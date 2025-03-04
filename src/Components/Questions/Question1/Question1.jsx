@@ -13,20 +13,21 @@ const Question1 = ({ incrementScore, incrementPageNumber }) => {
   };
 
   useEffect(() => {
-      const disableTime = Math.random() * 3000+ 1000;
-      setIsYesDisabled(true);
-      setTimeout(() => {
-        setIsYesDisabled(false);
-      }, disableTime);
-    
+    const disableTime = Math.random() * 3000 + 1000;
+    setIsYesDisabled(true);
+    setTimeout(() => {
+      setIsYesDisabled(false);
+    }, disableTime);
   }, []);
 
   return (
     <div className="container">
       <div className="row question">
         <div className="col-12">
-          <h2>Q1 Click yes</h2>
-          <p>(Page will move on in 5 seconds...)</p>
+          <h2>
+            You’ve just been told someone's name for the 6th time, do you
+            remember it?
+          </h2>
         </div>
       </div>
       <div className="column images">
@@ -52,8 +53,8 @@ const Question1 = ({ incrementScore, incrementPageNumber }) => {
           <Button
             className="w-100"
             onClick={() => {
-              playSound("/incorrect-sfx.mp3")
-              incrementPageNumber()
+              playSound("/incorrect-sfx.mp3");
+              incrementPageNumber();
             }}
           >
             No

@@ -12,9 +12,9 @@
   --btn-color-3: #7A7DD6; 
 
   /* Font sizes */
-  --font-size-large: 50px; 
-  --font-size-medium: 35px; 
-  --font-size-small: 30px; 
+  --font-size-large: 170px; 
+  --font-size-medium: 50px; 
+  --font-size-small: 100px; 
   --font-size-x-small: 28px;
   --font-size-xx-small: 25px; 
   --font-size-xxx-small: 20px;
@@ -37,12 +37,12 @@ h1, h2, h3, h4, h5, h6, p {
   color: black !important;
 }
 
-h1 { font-size: var(--font-size-large); text-align: center; }
-h2 { font-size: var(--font-size-medium); }
-h3 { font-size: var(--font-size-small); }
-h4 { font-size: var(--font-size-x-small); }
-h5 { font-size: var(--font-size-xx-small); }
-h6 { font-size: var(--font-size-xxx-small); }
+h1 { font-size: var(--font-size-large); text-align: center !important; }
+h2 { font-size: var(--font-size-medium) !important; }
+h3 { font-size: var(--font-size-small) !important; }
+h4 { font-size: var(--font-size-x-small) !important; }
+h5 { font-size: var(--font-size-xx-small) !important; }
+h6 { font-size: var(--font-size-xxx-small) !important; }
 
 p {
   font-size: var(--font-size-paragraph) !important;

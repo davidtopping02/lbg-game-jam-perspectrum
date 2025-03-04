@@ -50,7 +50,7 @@ const WelcomePage = ({ incrementPageNumber }) => {
   return (
     <div className="container text-center d-flex flex-column justify-content-center align-items-center vh-100">
       <h1
-        className={`display-3 fw-bold ${fadeOut ? "fade-out" : "fade-in"}`}
+        className={`fw-bold ${fadeOut ? "fade-out" : "fade-in"}`}
         style={{ minHeight: "1em" }}
       >
         {title}
